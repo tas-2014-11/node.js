@@ -1,0 +1,32 @@
+extends layout
+
+h1 Order List
+
+block content
+  table(class='itemmastertable')
+    thead
+      tr
+        th Name
+        th Buy
+        th Sell
+        th Who
+        th Date
+        th OID
+    tbody
+      - each order in orders
+        tr
+          td
+            a(href='/order/edit/' + order._id.toHexString())= order.name
+          td= order.buy
+          td= order.sell
+          td= order.who
+          td= order.date
+          td= order._id
+    tfoot
+
+
+block footer
+  a(class='bigbutton',href='/overview') Overview
+  a(class='bigbutton',href='/order/new') New Order
+  a(class='bigbutton',href='/order/list') List Orders
+  a(class='bigbutton',href='/order/export') Export Orders

@@ -1,0 +1,7 @@
+#!/bin/bash
+
+now=`date +%FT%T`
+
+url=http://leela:8080/item/export
+
+wget --output-document=data.$now $url

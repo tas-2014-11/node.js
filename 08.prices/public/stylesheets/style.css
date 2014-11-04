@@ -1,0 +1,202 @@
+html {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: 'Trebuchet MS';
+  font-size: 11pt;
+  color: #000;
+  background-color: #aaa;
+}
+a {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+table {
+  border-collapse: collapse;
+}
+.footer {
+  padding: 8px 0 0 8px;
+}
+.footer a {
+  color: #000;
+  border: 1px solid #444;
+  border-radius: 6px;
+  text-decoration: none;
+  padding: 2px 6px;
+  margin: 0 4px;
+}
+.itemdetailtable td {
+  border: 1px solid #000;
+  padding: 2px 4px;
+}
+.itemmastertable thead {
+  border-bottom: 3px solid #000;
+}
+.itemmastertable td,
+.itemmastertable th {
+  border: 1px solid #000;
+  padding: 2px 4px;
+}
+.newitemtable tr {
+  border: 1px solid #000;
+}
+.newitemtable td {
+  border: none;
+}
+div.submit {
+  padding: 10px 2px 10px 4px;
+}
+.labeltd {
+  text-align: right;
+  padding: 8px 2px 8px 4px;
+}
+label:after {
+  content: ':';
+}
+.raritytd {
+  border: none;
+  padding: 12px;
+}
+.center {
+  text-align: center;
+}
+.subsubtype {
+  color: #000;
+}
+.select {
+  border: 1px solid #000;
+  color: #fff;
+  background-color: #222;
+  margin: 2px;
+}
+.textinput {
+  font-family: 'Trebuchet MS';
+  font-size: 11pt;
+  border: 2px solid #666;
+  color: #ffc;
+  background-color: #000;
+  margin: 6px;
+  width: 16em;
+}
+.dateinput {
+  width: 20em;
+}
+.textinputunused {
+  background-color: #ffc;
+}
+.onblack {
+  background-color: #000;
+}
+.whiteonblack {
+  color: #ffc;
+  background-color: #000;
+}
+.bigbutton {
+  color: #000;
+  background-color: #999;
+  padding: 2px 6px;
+  border-radius: 6px;
+  border: 2px solid #666;
+  margin: 0px 2px 2px 0px;
+  display: inline-block;
+  text-align: center;
+}
+.clearbutton {
+  color: #000;
+}
+.submitbutton {
+  font-family: 'Trebuchet MS';
+  font-size: 11pt;
+}
+tr.quiet {
+  border: none;
+}
+.hidden {
+  display: none;
+}
+.rarity {
+  color: #ffc;
+  background-color: #000;
+}
+.rarityJunk {
+  color: #808080;
+}
+.rarityBasic {
+  color: #fff;
+}
+.rarityFine {
+  color: #00f;
+}
+.rarityMasterwork {
+  color: #008000;
+}
+.rarityRare {
+  color: #ff0;
+}
+.rarityExotic {
+  color: #ffd700;
+}
+.rarityLegendary {
+  color: #f00;
+}
+.rarityMystic {
+  color: #800080;
+}
+.overview {
+  border: none;
+  border-collapse: collapse;
+  font-family: Verdana;
+  font-size: 10pt;
+}
+.type {
+  display: table;
+}
+.typelabel {
+  font-weight: bold;
+  font-size: 11pt;
+  margin: 6px;
+  margin-top: 32px;
+}
+.tier {
+  display: table-row;
+}
+.tierlabel {
+  border: 1px solid #000;
+  padding: 6px;
+  display: table-cell;
+  font-weight: bold;
+  text-align: center;
+  border-right: 3px solid #000;
+  background-color: #888;
+}
+.subtype {
+  border: 1px solid #000;
+  display: table-cell;
+}
+.bottomborder {
+  border-bottom: 3px solid #000;
+  background-color: #888;
+}
+.subtypelabel {
+  color: #000;
+  font-weight: bold;
+  display: table-cell;
+  padding: 3px;
+}
+.name {
+  color: #000;
+  padding: 3px;
+}
+.newordertable tr {
+  border: 1px solid #000;
+}
+.newordertable tr.quiet {
+  border: none;
+}
+.newordertable td {
+  border: 1px solid #000;
+  padding: 2px 4px;
+}

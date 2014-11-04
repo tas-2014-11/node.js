@@ -1,0 +1,49 @@
+extends layout
+
+h1 Item Detail
+
+block content
+  table(class='itemdetailtable')
+    thead
+    tbody
+      tr
+        td  Name
+        td= item.name
+      tr
+        td  Rarity
+        td(class='rarity'+item.rarity)= item.rarity
+      tr
+        td  Tier
+        td= item.tier
+      tr
+        td  Type
+        td= item.type
+      tr
+        td  Subtype
+        td= item.subtype
+      tr
+        td  Value
+        td= item.value
+      tr
+        td  Value (Gems)
+        td= item.value_gems
+      tr
+        td  Value (Karma)
+        td= item.value_karma
+      tr
+        td  Used By
+        td= item.usedby
+      tr
+        td  Level
+        td= item.level
+      tr
+        td  Aquisition
+        td= item.aquisition
+      tr
+        td  OID
+        td= item._id.toHexString()
+    tfoot
+
+block footer
+  a(href='/item/list') List Items
+  a(href='/item/delete/' + item._id) Delete This Item

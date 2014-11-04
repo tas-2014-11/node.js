@@ -1,0 +1,61 @@
+extends layout
+
+block scripts
+  script(src='/javascripts/prices.js',type='text/javascript')
+
+h1 New Order
+
+block content
+  form(method='post',action='/order/new')
+    table(class='newordertable')
+      tr
+        td(class='labeltd')
+          label(for='name') Name
+        td= name
+          input(type='hidden',name='name',id='name',value='#{name}')
+
+      tr
+        td(class='labeltd')
+          label(for='buy') Buy
+        td
+          input(type='text',name='buy',class='textinput',id='buy',value='#{defaults.buy}')
+        td
+          a(class='bigbutton clearbutton',onclick="clearElementValue('buy')") Clear
+        td(class='raritytd')
+          - each v in statics.values
+            a(class='bigbutton',onclick="setElementValue('buy','#{v}')")= v
+            - if(!(v%10))
+              div
+
+      tr
+        td(class='labeltd')
+          label(for='sell') Sell
+        td
+          input(type='text',name='sell',class='textinput',id='sell',value='#{defaults.sell}')
+        td
+          a(class='bigbutton clearbutton',onclick="clearElementValue('sell')") Clear
+        td(class='raritytd')
+          - each v in statics.values
+            a(class='bigbutton',onclick="setElementValue('sell','#{v}')")= v
+            - if(!(v%10))
+              div
+
+      tr
+        td(class='labeltd')
+          label(for='who') Who
+        td
+          input(type='text',name='who',class='textinput',id='who',value='#{defaults.who}')
+        td
+          a(class='bigbutton clearbutton',onclick="clearElementValue('who')") Clear
+
+      tr
+        td(class='labeltd')
+          label(for='date') Date
+        td
+          input(type='text',name='date',class='textinput dateinput',id='date',value='#{defaults.date}')
+
+
+    div(class='submit')
+      input(type='submit',value='Submit',class='bigbutton submitbutton')
+      a(class='bigbutton',href='/overview') Overview
+      a(class='bigbutton',href='/order/list') List Orders

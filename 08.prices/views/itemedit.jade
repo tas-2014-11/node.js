@@ -1,0 +1,136 @@
+extends layout
+
+block scripts
+  script(src='/javascripts/prices.js',type='text/javascript')
+
+h1 Item Edit
+
+block content
+  form(method='post')
+    table(class='itemdetailtable')
+      tr
+        td(class='labeltd')
+          label(for='name') Name
+        td= item.name
+
+      tr
+        td(class='labeltd')
+          label(for='rarity') Rarity
+        td(class='hidden rarity'+item.rarity)= item.rarity
+        td(class='quiet')
+          input(type='text',name='rarity',class='textinput whiteonblack rarity+'+item.rarity,id='rarity',value='#{item.rarity}')
+        td(class='quiet')
+          a(class='bigbutton clearbutton',onclick="setRarityValue('#{item.rarity}')") Reset
+        td(class='raritytd')
+          - each r in statics.rarities
+            a(class='bigbutton rarity#{r.rarity}',onclick="setRarityValue('#{r.rarity}')")= r.rarity
+
+
+      tr
+        td(class='labeltd')
+          label(for='tier') Tier
+        td
+          input(type='text',name='tier',class='textinput',id='tier',value='#{item.tier}')
+        td
+          a(class='bigbutton clearbutton',onclick="setElementValue('tier','#{item.tier}')") Clear
+        td(class='raritytd')
+          - each tier in statics.tiers
+            a(class='bigbutton',onclick="setElementValue('tier','#{tier}')")= tier
+
+
+      tr
+        td(class='labeltd')
+          label(for='value') Value
+        td
+          input(type='text',name='value',class='textinput',id='value',value='#{item.value}')
+        td
+          a(class='bigbutton clearbutton',onclick="setElementValue('value','#{item.value}')") Reset
+        td(class='raritytd')
+          - each value in statics.values
+            a(class='bigbutton',onclick="setElementValue('value','#{value}')")= value
+
+
+      tr
+        td(class='labeltd')
+          label(for='type') Type
+        td
+          input(type='text',name='type',class='textinput',id='type',value='#{item.type}')
+        td
+          a(class='bigbutton clearbutton',onclick="setElementValue('type','#{item.type}')") Reset
+        td(class='raritytd')
+          - each t in statics.types
+            a(class='bigbutton',onclick="setElementValue('type','#{t}')")= t
+
+
+      tr
+        td(class='labeltd')
+          label(for='subtype') Subtype
+        td
+          input(type='text',name='subtype',class='textinput',id='subtype',value='#{item.subtype}')
+        td
+          a(class='bigbutton clearbutton',onclick="setElementValue('subtype','#{item.subtype}')") Reset
+        td(class='raritytd')
+          div.subsubtype(class='') Basic Mats:
+            - each st in statics.subtype_basicCraftingMaterial
+              a(class='bigbutton',onclick="setElementValue('subtype','#{st}')")= st
+          div.subsubtype Fine Mats:
+            - each st in statics.subtype_fineCraftingMaterial
+              a(class='bigbutton',onclick="setElementValue('subtype','#{st}')")= st
+          div.subsubtype Rare Mats:
+            - each st in statics.subtype_rareCraftingMaterial
+              a(class='bigbutton',onclick="setElementValue('subtype','#{st}')")= st
+          div.subsubtype Misc Mats:
+            - each st in statics.subtype_miscCraftingMaterial
+              a(class='bigbutton',onclick="setElementValue('subtype','#{st}')")= st
+          div.subsubtype Gemstone Low:
+            - each st in statics.subtype_gemstone_low
+              a(class='bigbutton',onclick="setElementValue('subtype','#{st}')")= st
+          div.subsubtype Gemstone Mid:
+            - each st in statics.subtype_gemstone_mid
+              a(class='bigbutton',onclick="setElementValue('subtype','#{st}')")= st
+          div.subsubtype Gemstone High:
+            - each st in statics.subtype_gemstone_high
+              a(class='bigbutton',onclick="setElementValue('subtype','#{st}')")= st
+          div.subsubtype Upgrades:
+            - each st in statics.subtype_upgrade
+              a(class='bigbutton',onclick="setElementValue('subtype','#{st}')")= st
+
+
+
+      tr
+        td(class='labeltd')
+          label(for='level') Level
+        td
+          input(type='text',name='level',class='textinput',id='level',value='#{item.level}')
+
+      tr
+        td(class='labeltd')
+          label(for='usedby') Used By
+        td= item.usedby
+
+      tr
+        td(class='labeltd')
+          label(for='aquisition") Aquisition
+        td= item.aquisition
+
+      tr
+        td(class='labeltd')
+          label(for='value_gems") Value (Gems)
+        td= item.value_gems
+
+      tr
+        td(class='labeltd')
+          label(for='value_karma") Value (Karma)
+        td= item.value_karma
+
+      tr
+        td(class='labeltd')
+          label(for='oid") OID
+        td= item._id
+          input(type='hidden',name='_id',id='_id',value="#{item._id}")
+    div(class='submit')
+      input(type='submit',value='Submit',class='bigbutton submitbutton')
+
+block footer
+  a(class='bigbutton',href='/item/list') List Items
+  a(class='bigbutton',href='/item/delete/'+item._id) Delete This Item
